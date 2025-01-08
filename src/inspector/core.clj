@@ -28,7 +28,7 @@
   []
   (into {}
         (for [k (keys &env)
-              :when (not (.endsWith (str k) "__auto__"))]
+              :when (not (str/ends-with? (str k) "__auto__"))]
           [(keyword k) (symbol k)])))
 
 (defmacro inspect
